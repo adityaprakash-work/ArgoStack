@@ -1,6 +1,9 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: demo-minio
-spec:
-  type: LoadBalancer
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- upstream.yaml
+
+patchesStrategicMerge:
+- demo-minio-service.yaml
+- demo-minio-deployment.yaml
