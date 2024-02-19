@@ -7,6 +7,7 @@ resources:
 - filestash-preview-service.yaml
 - sensor.yaml
 - event-source.yaml
+- rbac.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
