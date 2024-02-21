@@ -6,7 +6,21 @@ items:
     kind: Namespace
     metadata:
       name: demo
-
+      
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: minio
+      labels:
+        type: infrastructure
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/adityaprakash-work/ArgoStack.git
+        path: infrastructure/minio
+      destination: *dest
+      syncPolicy: *policy
+      
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
@@ -51,20 +65,6 @@ items:
       source:
         repoURL: https://github.com/adityaprakash-work/ArgoStack.git
         path: infrastructure/argo-workflow
-      destination: *dest
-      syncPolicy: *policy
-
-  - apiVersion: argoproj.io/v1alpha1
-    kind: Application
-    metadata:
-      name: minio
-      labels:
-        type: infrastructure
-    spec:
-      project: default
-      source:
-        repoURL: https://github.com/adityaprakash-work/ArgoStack.git
-        path: infrastructure/minio
       destination: *dest
       syncPolicy: *policy
 
