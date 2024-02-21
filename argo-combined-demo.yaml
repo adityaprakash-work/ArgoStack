@@ -18,8 +18,13 @@ items:
       source:
         repoURL: https://github.com/adityaprakash-work/ArgoStack.git
         path: infrastructure/minio
-      destination: *dest
-      syncPolicy: *policy
+      destination: &dest
+        server: "https://kubernetes.default.svc"
+        namespace: demo
+      syncPolicy: &policy
+        automated:
+          prune: true
+          selfHeal: true
       
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
@@ -32,13 +37,8 @@ items:
       source:
         repoURL: https://github.com/adityaprakash-work/ArgoStack.git
         path: infrastructure/argo-events
-      destination: &dest
-        server: "https://kubernetes.default.svc"
-        namespace: demo
-      syncPolicy: &policy
-        automated:
-          prune: true
-          selfHeal: true
+      destination: *dest
+      syncPolicy: *policy
 
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
