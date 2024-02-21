@@ -33,6 +33,8 @@ spec:
 
                 templates:
                 - name: main
+                  retryStrategy:
+                    limit: 20
                   steps:
                   - - name: find-faces
                       template: find-faces
