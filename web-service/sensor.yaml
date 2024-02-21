@@ -34,7 +34,7 @@ spec:
                 templates:
                 - name: main
                   retryStrategy:
-                    limit: 20
+                    limit: 4
                   steps:
                   - - name: find-faces
                       template: find-faces
@@ -52,6 +52,8 @@ spec:
                       
 
                 - name: find-faces
+                  retryStrategy:
+                    limit: 4
                   inputs:
                     parameters:
                     - name: path
@@ -79,6 +81,8 @@ spec:
                       path: "/result.jpg"
 
                 - name: upload-result
+                  retryStrategy:
+                    limit: 4
                   inputs:
                     artifacts:
                     - name: file
