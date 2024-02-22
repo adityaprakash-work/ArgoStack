@@ -101,7 +101,7 @@ spec:
                           key: secretkey
                     image: amazon/aws-cli
                     command: [aws]
-                    args: ["--endpoint-url", "http://demo-minio:9000/", "s3", "cp", "/tmp/file", "s3://demo/{{workflow.parameters.path}}.png"]
+                    args: ["--endpoint-url", "http://demo-minio.demo.svc.cluster.local:9000/", "s3", "cp", "/tmp/file", "s3://demo/{{workflow.parameters.path}}.png"]
           # The container args from the workflow are overridden by the s3 notification key
           parameters:
             - src:

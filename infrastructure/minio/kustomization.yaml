@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - upstream.yaml
+- values.yaml
 
 patchesStrategicMerge:
 - demo-minio-service.yaml

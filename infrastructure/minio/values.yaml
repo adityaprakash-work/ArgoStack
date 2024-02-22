@@ -2,7 +2,7 @@ minio:
   accessKey: admin
   secretKey: password
   persistence:
-    enabled: false
+    enabled: true # was false earlier
   defaultBucket:
     enabled: true
     name: demo

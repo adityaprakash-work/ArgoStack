@@ -9,4 +9,4 @@ spec:
         - name: minio
           resources:
             requests:
-              memory: 256Mi
+              memory: 1Gi

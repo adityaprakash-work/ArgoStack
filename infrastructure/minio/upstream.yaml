@@ -315,7 +315,7 @@ spec:
         app: minio-job
         release: demo
     spec:
-      restartPolicy: OnFailure      
+      restartPolicy: OnFailure
       volumes:
         - name: minio-configuration
           projected:
