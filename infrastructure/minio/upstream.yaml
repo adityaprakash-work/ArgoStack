@@ -341,4 +341,4 @@ spec:
             mountPath: /config
         resources:
           requests:
-            memory: 128Mi
+            memory: 256Mi

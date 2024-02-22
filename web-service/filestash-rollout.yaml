@@ -12,7 +12,7 @@ spec:
         app.kubernetes.io/name: demo-filestash
     spec:
       containers:
-        - image: 'machines/filestash:b26eb6b'
+        - image: 'machines/filestash:latest'
           imagePullPolicy: Always
           name: filestash
           ports:

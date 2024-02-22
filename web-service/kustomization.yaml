@@ -18,7 +18,7 @@ configMapGenerator:
   - demo-filestash-config.json
 
 # Upgrade to new version
-images:
-- name: machines/filestash
-  newName: alexmt/filestash
-  newTag: v0.1
+# images:
+# - name: machines/filestash
+#   newName: alexmt/filestash
+#   newTag: v0.1
